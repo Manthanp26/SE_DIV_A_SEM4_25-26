@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APSiT Found It – About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #5b21b6;         /* violet-700 */
+            --primary-light: #7c3aed;
+            --primary-dark: #4c1d95;
+            --accent: #ec4899;           /* pink-500 */
+            --bg: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.78);
+            --text: #0f172a;
+            --text-muted: #475569;
+            --border: rgba(226, 232, 240, 0.75);
+            --shadow: 0 10px 30px -10px rgba(91, 33, 182, 0.14);
+            --shadow-hover: 0 20px 45px -12px rgba(91, 33, 182, 0.26);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        /* ==================== NAVBAR ==================== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.96rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            transition: all 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .nav-links i {
+            font-size: 1.25rem;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 7rem 1.5rem 5.5rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 3.5rem;
+            border-bottom-right-radius: 3.5rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.16) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 8vw, 5.2rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1.1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            max-width: 680px;
+            margin: 0 auto;
+            opacity: 0.94;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about-section {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 6rem;
+        }
+
+        .about-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.9rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        .about-text {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 1.6rem;
+            padding: 2.5rem 2.8rem;
+            box-shadow: var(--shadow);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.6rem;
+        }
+
+        .about-image-container {
+            text-align: center;
+            margin: 3.5rem 0 5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 720px;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-hover);
+            transition: all 0.35s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 3.5rem 1.5rem 2.5rem;
+            margin-top: 4rem;
+            font-size: 0.97rem;
+        }
+
+        footer .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #cbd5e1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
+            .nav-links { gap: 1.4rem; justify-content: center; }
+            .hero { padding: 5.5rem 1.2rem 4.5rem; }
+            .about-section { padding: 4rem 1.2rem 5rem; }
+            .about-section h2 { font-size: 2.4rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.8rem; }
+            .about-text { padding: 2rem 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-brand">APSiT Found It</div>
+    <div class="nav-links">
+        <a href="index.jsp"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="AboutUs.html" class="active"><i class="fa-solid fa-circle-info"></i>Our Story</a>
+        <a href="Feedback.jsp"><i class="fa-solid fa-comment-dots"></i>Rate Us</a>
+        <a href="ContactUs.jsp"><i class="fa-solid fa-phone-volume"></i>Ping Us</a>
+        <a href="Loginn.jsp"><i class="fa-solid fa-user-graduate"></i>Senior2Junior</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>About Us</h1>
+    <p>Find what you lost. Return what you found.</p>
+</div>
+
+<!-- ABOUT CONTENT -->
+<section class="about-section">
+    <div class="about-image-container">
+        <img class="about-image" 
+             src="https://plus.unsplash.com/premium_photo-1661297433665-870517c1cf6f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0" 
+             alt="Community helping each other find lost items">
+    </div>
+
+    <div class="about-text">
+        <h2>Our Mission</h2>
+        <p>Our Lost and Found Portal is a digital platform designed to help people quickly report, track, and recover lost items in an easy and transparent way. The portal acts as a bridge between individuals who have lost their belongings and those who have found them, promoting honesty, responsibility, and cooperation within the community.</p>
+
+        <p>We aim to reduce the stress and time involved in finding lost items by providing a centralized system where users can post details of lost or found belongings. By using technology, we make the recovery process faster, more reliable, and accessible to everyone.</p>
+
+        <p>Our platform encourages ethical behavior and builds trust by ensuring secure information sharing and clear communication between users. Whether it’s a student, employee, or visitor, the Lost and Found Portal helps create a safer and more organized environment.</p>
+
+        <p>We believe that small digital solutions can create a big social impact — saving resources, reducing misuse of items, and strengthening community values.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>@2026 <span class="highlight">Manthan Prathmesh Yathath Vedant</span><br>
+    APSIT Community Lost & Found Portal</p>
+</footer>
+
+</body>
+</html>
